@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<!-- saved from url=(0046)http://127.0.0.1:5500/indian%20flag/index.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>web dev tech</title>
+</head>
+<body>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+        header {
+            background-color: #007bff;
+            color: white;
+            text-align: center;
+            padding: 1rem 0;
+        }
+        section {
+            padding: 20px;
+        }
+        h1, h2 {
+            color: #007bff;
+        }
+        ul {
+            list-style-type: square;
+            padding-left: 20px;
+        }
+        li {
+            margin: 10px 0;
+        }
+        p {
+            margin: 10px 0;
+        }
+        code {
+            background-color: #eee;
+            padding: 2px 4px;
+            font-family: monospace;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+
+
+    <header>
+        <h1>Live Server Setup Documentation</h1>
+    </header>
+    <section>
+        <h2>Introduction</h2>
+        <p>This guide explains how to use Visual Studio Code (VS Code) with the Live Server extension to view your HTML files in a browser. It includes information on accessing the local URL <code>http://127.0.0.1:5500/index.html</code>.</p>
+    </section>
+    <section>
+        <h2>Steps to Set Up and Run</h2>
+        <ul>
+            <li>Install <b>Visual Studio Code</b> from <a href="https://code.visualstudio.com/" target="_blank">https://code.visualstudio.com/</a>.</li>
+            <li>Open VS Code and install the <b>Live Server extension</b>:
+                <ul>
+                    <li>Go to the Extensions view (<code>Ctrl+Shift+X</code> or <code>Cmd+Shift+X</code> on Mac).</li>
+                    <li>Search for <b>Live Server</b> by <i>Ritwick Dey</i> and click <b>Install</b>.</li>
+                </ul>
+            </li>
+            <li>Create a new folder for your project and open it in VS Code.</li>
+            <li>Inside the folder, create a file named <code>index.html</code> and paste your HTML code.</li>
+            <li>Right-click the <code>index.html</code> file and select <b>Open with Live Server</b>.</li>
+            <li>Your browser will open a local URL like <code>http://127.0.0.1:5500/index.html</code>.</li>
+        </ul>
+    </section>
+    <section>
+        <h2>Accessing the Local URL</h2>
+        <p>Once Live Server is running, your file will be accessible at <code>http://127.0.0.1:5500/index.html</code>. This URL has the following components:</p>
+        <ul>
+            <li><b>127.0.0.1:</b> Refers to your local computer (also known as <i>localhost</i>).</li>
+            <li><b>5500:</b> The port number used by Live Server (may vary depending on your setup).</li>
+            <li><b>index.html:</b> The file you are viewing in the browser.</li>
+        </ul>
+    </section>
+    <section>
+        <h2>Troubleshooting</h2>
+        <ul>
+            <li>If the browser doesn't open, ensure Live Server is installed and running.</li>
+            <li>If you see "404 Not Found," ensure the <code>index.html</code> file is saved in the correct directory.</li>
+            <li>If you want to share the page on the same network, replace <code>127.0.0.1</code> with your local IP (e.g., <code>192.168.x.x</code>).</li>
+        </ul>
+    </section>
+    <footer>
+        <p>© 2024 Live Server Documentation</p>
+    </footer>
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+
+</body></html>
