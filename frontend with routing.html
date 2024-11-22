@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<!-- saved from url=(0046)http://127.0.0.1:5500/indian%20flag/index.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>web dev tech</title>
+</head>
+<body>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+        }
+        header {
+            background-color: #007bff;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #343a40;
+            padding: 10px;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+            padding: 8px 15px;
+            background-color: #007bff;
+            border-radius: 4px;
+        }
+        nav a:hover {
+            background-color: #0056b3;
+        }
+        .container {
+            padding: 20px;
+        }
+        .hidden {
+            display: none;
+        }
+        .section {
+            background: white;
+            padding: 15px;
+            border: 1px solid #ddd;
+            margin-bottom: 10px;
+            border-radius: 4px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .bookmark {
+            color: #007bff;
+            cursor: pointer;
+        }
+    </style>
+
+
+    <header>
+        <h1>Frontend with Routing and Downloads</h1>
+    </header>
+    <nav>
+        <a href="http://127.0.0.1:5500/indian%20flag/index.html#home" onclick="navigate(&#39;home&#39;)">Home</a>
+        <a href="http://127.0.0.1:5500/indian%20flag/index.html#gfg-template" onclick="navigate(&#39;gfg-template&#39;)">GFG Template</a>
+        <a href="http://127.0.0.1:5500/indian%20flag/index.html#downloads" onclick="navigate(&#39;downloads&#39;)">Downloads</a>
+    </nav>
+    <div id="content" class="container">
+        <!-- Home Section -->
+        <div id="home" class="section">
+            <h2>Welcome to Home</h2>
+            <p>This is the main page. Use the navigation bar to explore.</p>
+        </div>
+        <!-- GFG Template Section -->
+        <div id="gfg-template" class="section hidden">
+            <h2>GFG Template</h2>
+            <p>This section showcases a GFG-inspired design template.</p>
+            <p class="bookmark" onclick="bookmarkSection(&#39;gfg-template&#39;)">🔖 Bookmark this section</p>
+        </div>
+        <!-- Downloads Section -->
+        <div id="downloads" class="section hidden">
+            <h2>Downloads</h2>
+            <p>Click the button below to download a sample file.</p>
+            <button onclick="downloadFile()">Download File</button>
+        </div>
+    </div>
+    <script>
+        // Handle navigation
+        function navigate(page) {
+            document.querySelectorAll('.section').forEach(section => {
+                section.classList.add('hidden');
+            });
+            document.getElementById(page).classList.remove('hidden');
+        }
+
+        // Bookmarking functionality
+        function bookmarkSection(sectionId) {
+            const sectionName = document.querySelector(`#${sectionId} h2`).textContent;
+            alert(`You have bookmarked the "${sectionName}" section.`);
+        }
+
+        // Simulate a download
+        function downloadFile() {
+            window.location.href = '/download'; // This will be handled by the backend
+        }
+    </script>
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+
+</body></html>
